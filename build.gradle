@@ -62,8 +62,9 @@ tasks.register('shadowJar', Jar) {
 
 tasks.register('runPlugin', JavaExec) {
 	group = 'application'
-	description = 'Launches RuneLite with LastManPlugin'
+	description = 'Dev Launches RuneLite with LastManPlugin for testing.'
 
 	mainClass.set('com.lastman.LastManTest')
-	classpath = sourceSets.main.runtimeClasspath
+	classpath = sourceSets.test.runtimeClasspath
+	jvmArgs = ['-ea']
 }
