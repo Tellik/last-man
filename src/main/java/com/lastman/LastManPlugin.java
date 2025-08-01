@@ -102,8 +102,8 @@ public class LastManPlugin extends Plugin
 			return;
 		}
 
-		if (event.getType() != MenuAction.NPC_FIRST_OPTION.getId()
-				&& event.getType() != MenuAction.NPC_SECOND_OPTION.getId())
+		MenuAction action = MenuAction.of(event.getType());
+		if (action == null || !action.name().startsWith("NPC_"))
 		{
 			return;
 		}
